@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Fabryka żelków</title>
+    <link rel="stylesheet" href="styl9.css" />
+  </head>
+  <body>
+    <section id="lewy">
+      <a href="index.html"><img src="cukierki2.png" alt="logo fabryki" /></a>
+    </section>
+    <section id="prawy"><a id="zamow" href="zamowienie.html">Zamówienie</a></section>
+    <header><h2>Zamów nasz produkt</h2></header>
+    <aside>
+      <h1>Oferta</h1>
+      <table>
+        <tr>
+          <td>Kształty</td>
+          <td>Kolory</td>
+        </tr>
+        <tr>
+          <td>
+            <ol>
+              <li>miś</li>
+              <li>żabka</li>
+              <li>serce</li>
+            </ol>
+          </td>
+          <td>
+            <ol>
+              <li>czerwony</li>
+              <li>niebieski</li>
+              <li>żółty</li>
+              <li>inny</li>
+            </ol>
+          </td>
+        </tr>
+      </table>
+    </aside>
+    <main>
+      <p>Podaj numer kształtu</p>
+      <input id="kstalt" type="number" />
+      <p>skomponuj swój kolor, podaj RGB:</p>
+      R:<input id="red" type="number"></input>
+      G:<input id="green" type="number"></input>
+      B:<input id="blue" type="number"></input>
+      <button onclick="zamowienie()">Zamów</button>
+      <p id="wynik">Wybrany kształt</p>
+      <button id="kolorek">Wybrany kolor</button>
+    </main>
+    <footer>
+      <p>Autor strony: <i>12345678910</i></p>
+    </footer>
+    <script>
+        function zamowienie(){
+            let ksztalt = document.getElementById("kstalt").value;
+            switch (ksztalt) {
+                case '1':
+                    document.getElementById("wynik").innerHTML = "Zamówiłeś żelka: miś"
+                break;
+                case '2':
+                document.getElementById("wynik").innerHTML = "Zamówiłeś żelka: żabka"
+                break;
+                case '3':
+                document.getElementById("wynik").innerHTML = "Zamówiłeś żelka: serce"
+                break;
+                default: 
+                document.getElementById("wynik").innerHTML = "Zamówiłeś żelka: inny kształt"
+                
+            }
+                document.getElementById("kolorek").style.backgroundColor = `rgb(${document.getElementById("red").value},${document.getElementById("green").value},${document.getElementById("blue").value})`
+                
+                                
+        }
+    </script>
+  </body>
+</html>
